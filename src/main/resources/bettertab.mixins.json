@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.anvilcraft.rg.bettertab.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "bettertab.refmap.json",
+  "mixins": [
+    "MinecraftServerMixin",
+    "ServerChunkCacheMixin"
+  ],
+  "client": [
+    "GuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

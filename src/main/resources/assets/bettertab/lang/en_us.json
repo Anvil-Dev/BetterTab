@@ -1,0 +1,13 @@
+{
+  "rolling_gate.category.bettertab": "BETTER TAB",
+  "tab.bettertab.tps": "TPS: %s MSPT: %s",
+
+  "bettertab.rolling_gate.rule.show_tps": "Show TPS",
+  "bettertab.rolling_gate.rule.show_tps.desc": "Show TPS and MSPT on Tab",
+
+  "bettertab.rolling_gate.rule.show_mobcaps": "Show Mobcaps",
+  "bettertab.rolling_gate.rule.show_mobcaps.desc": "Show Mobcaps on Tab",
+
+  "bettertab.rolling_gate.rule.custom_tab_line": "Custom Tab Line",
+  "bettertab.rolling_gate.rule.custom_tab_line.desc": "Show Custom Tab Line on Tab, can enter a style code using &&"
+}

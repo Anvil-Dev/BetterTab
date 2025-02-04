@@ -1,0 +1,13 @@
+{
+  "rolling_gate.category.bettertab": "更好的Tab",
+  "tab.bettertab.tps": "TPS: %s    MSPT: %s",
+
+  "bettertab.rolling_gate.rule.show_tps": "显示 TPS",
+  "bettertab.rolling_gate.rule.show_tps.desc": "在 Tab 上显示 TPS 与 MSPT",
+
+  "bettertab.rolling_gate.rule.show_mobcaps": "显示 Mobcaps",
+  "bettertab.rolling_gate.rule.show_mobcaps.desc": "在 Tab 上显示 Mobcaps",
+
+  "bettertab.rolling_gate.rule.custom_tab_line": "自定义 Tab 行",
+  "bettertab.rolling_gate.rule.custom_tab_line.desc": "在 Tab 上显示自定义的行，可以使用&&输入样式代码"
+}
