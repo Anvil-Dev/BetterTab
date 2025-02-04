@@ -19,7 +19,7 @@ public class BetterTabServerRules {
     public static boolean showMobcaps = false;
 
     @Rule(
-        allowed = {"none"},
+        allowed = {"none", "custom"},
         categories = BetterTab.MODID,
         validator = RGValidator.StringValidator.class
     )
