@@ -11,7 +11,7 @@ jobs:
     env:
       CI_BUILD: false
       PR_BUILD: false
-      VERSION_TYPE: ${{ github.event.release.prerelease && 'alpha' || 'release' }}
+      VERSION_TYPE: ${{ github.event.release.prerelease && 'beta' || 'release' }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -79,10 +79,15 @@ jobs:
           java: 21
           fail-mode: skip
           changelog: ${{ github.event.release.body }}
+          dependencies: |
+            rolling_gate@1.0.0+build.32(required){modrinth:HXsmHiKu}{curseforge:1194894}
 
           modrinth-id: woulhAPh
           modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
           modrinth-featured: true
+
+          curseforge-id: 1194895
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
 
           files: |
             build/libs/BetterTab-neoforge-${{ steps.version.outputs.version }}.jar
