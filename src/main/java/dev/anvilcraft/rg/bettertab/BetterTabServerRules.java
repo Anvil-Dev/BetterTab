@@ -2,7 +2,9 @@ package dev.anvilcraft.rg.bettertab;
 
 import dev.anvilcraft.rg.api.RGValidator;
 import dev.anvilcraft.rg.api.Rule;
+import dev.anvilcraft.rg.api.server.RGServerRules;
 
+@RGServerRules(value = "bettertab", languages = {"zh_cn", "en_us"})
 public class BetterTabServerRules {
     @Rule(
         allowed = {"true", "false"},
