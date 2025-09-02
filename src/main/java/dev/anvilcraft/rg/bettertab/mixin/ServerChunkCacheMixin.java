@@ -19,7 +19,7 @@ public class ServerChunkCacheMixin {
     @Final
     public ServerLevel level;
 
-    @Redirect(method = "tickChunks", at = @At(
+    @Redirect(method = "tickChunks(Lnet/minecraft/util/profiling/ProfilerFiller;J)V", at = @At(
         value = "INVOKE",
         target = "Lnet/minecraft/server/level/DistanceManager;getNaturalSpawnChunkCount()I"
     ))
