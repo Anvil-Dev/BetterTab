@@ -5,7 +5,7 @@ import dev.anvilcraft.rg.bettertab.tabs.TabManager;
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.PlayerTabOverlay;
 import net.minecraft.world.scores.Objective;
 import net.minecraft.world.scores.Scoreboard;
@@ -26,9 +26,9 @@ abstract class GuiMixin {
     @Final
     private PlayerTabOverlay tabList;
 
-    @Inject(method = "renderTabList", at = @At(value = "RETURN"))
+    @Inject(method = "extractTabList", at = @At(value = "RETURN"))
     private void renderTabList(
-        GuiGraphics guiGraphics,
+        GuiGraphicsExtractor guiGraphics,
         DeltaTracker deltaTracker,
         CallbackInfo ci,
         @Local Scoreboard scoreboard,
@@ -45,7 +45,7 @@ abstract class GuiMixin {
                 )
         ) {
             this.tabList.setVisible(true);
-            this.tabList.render(guiGraphics, guiGraphics.guiWidth(), scoreboard, objective);
+            this.tabList.extractRenderState(guiGraphics, guiGraphics.guiWidth(), scoreboard, objective);
         } else {
             this.tabList.setVisible(false);
         }
