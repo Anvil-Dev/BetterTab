@@ -23,7 +23,7 @@ apply from: "$rootDir/gradle/scripts/repositories.gradle"
 apply from: "$rootDir/gradle/scripts/dependencies.gradle"
 
 base {
-    archivesName = mod_name + "-neoforge-26.1.2"
+    archivesName = mod_name + "-neoforge-26.2"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
