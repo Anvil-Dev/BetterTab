@@ -23,7 +23,7 @@ apply from: "$rootDir/gradle/scripts/repositories.gradle"
 apply from: "$rootDir/gradle/scripts/dependencies.gradle"
 
 base {
-    archivesName = mod_name + "-neoforge-1.21.10"
+    archivesName = mod_name + "-neoforge-1.21.11"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
@@ -165,4 +165,9 @@ idea {
 
 tasks.named('jar', Jar) {
     archiveFileName = "${mod_id}-${version}-mc${minecraft_version}.jar"
+}
+
+tasks.withType(Jar).configureEach {
+    archiveBaseName = mod_id
+    archiveVersion = "${version}-mc${minecraft_version}"
 }

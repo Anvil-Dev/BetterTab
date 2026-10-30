@@ -5,10 +5,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.MobCategory;
-import org.jetbrains.annotations.NotNull;
 
 public interface Tab {
-    @NotNull Component getMsg(@NotNull MinecraftServer server, @NotNull ServerPlayer player);
+    Component getMsg(MinecraftServer server, ServerPlayer player);
 
     static ChatFormatting heatmapColor(double actual, double reference) {
         ChatFormatting color = ChatFormatting.GRAY;

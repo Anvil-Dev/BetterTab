@@ -7,10 +7,9 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.ServerTickRateManager;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.TimeUtil;
-import org.jetbrains.annotations.NotNull;
 
 public class TpsTab implements Tab {
-    public @NotNull Component getMsg(@NotNull MinecraftServer server, @NotNull ServerPlayer player) {
+    public Component getMsg(MinecraftServer server, ServerPlayer player) {
         double MSPT = ((double) server.getAverageTickTimeNanos()) / TimeUtil.NANOSECONDS_PER_MILLISECOND;
         ServerTickRateManager trm = server.tickRateManager();
         double TPS = 1000.0D / Math.max(trm.isSprinting() ? 0.0 : trm.millisecondsPerTick(), MSPT);

@@ -11,7 +11,6 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.NaturalSpawner;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 
@@ -21,7 +20,7 @@ public class MobcapsTab implements Tab {
     public static final int MAGIC_NUMBER = (int) Math.pow(17.0D, 2.0D);
 
     @Override
-    public @NotNull Component getMsg(@NotNull MinecraftServer server, @NotNull ServerPlayer player) {
+    public Component getMsg(MinecraftServer server, ServerPlayer player) {
         //noinspection resource
         if (!(player.level() instanceof ServerLevel level)) return Component.empty();
         ResourceKey<Level> dimension = level.dimension();

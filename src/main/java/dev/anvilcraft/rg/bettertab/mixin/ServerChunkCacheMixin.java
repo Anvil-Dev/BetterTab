@@ -6,7 +6,6 @@ import net.minecraft.server.level.DistanceManager;
 import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
-import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -23,7 +22,7 @@ public class ServerChunkCacheMixin {
         value = "INVOKE",
         target = "Lnet/minecraft/server/level/DistanceManager;getNaturalSpawnChunkCount()I"
     ))
-    private int setupTracking(@NotNull DistanceManager chunkTicketManager) {
+    private int setupTracking(DistanceManager chunkTicketManager) {
         int j = chunkTicketManager.getNaturalSpawnChunkCount();
         ResourceKey<Level> dim = this.level.dimension();
         MobcapsTab.CHUNK_COUNTS.put(dim, j);

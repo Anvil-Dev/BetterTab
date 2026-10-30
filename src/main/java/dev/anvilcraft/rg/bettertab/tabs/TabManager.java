@@ -5,7 +5,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -28,7 +27,7 @@ public class TabManager {
         return false;
     }
 
-    public static @NotNull Component getTabs(MinecraftServer server, ServerPlayer player) {
+    public static Component getTabs(MinecraftServer server, ServerPlayer player) {
         MutableComponent component = Component.literal("");
         int length = 0;
         for (Map.Entry<Supplier<Boolean>, Tab> entry : TABS.entrySet()) {
@@ -41,7 +40,7 @@ public class TabManager {
         return component;
     }
 
-    public static void sendToPlayer(@NotNull MinecraftServer server) {
+    public static void sendToPlayer(MinecraftServer server) {
         server.getPlayerList()
             .getPlayers()
             .forEach(player -> player.setTabListFooter(TabManager.getTabs(server, player)));
